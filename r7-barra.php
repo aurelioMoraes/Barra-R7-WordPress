@@ -37,19 +37,21 @@ function footer_r7() {
 function header_r7() {
 	$sub_menu = get_option( 'sub_menu' );
 	$banner = get_option( 'show_banner' );
+	$accessibility = get_option( 'show_accessibility' );
 
 	?>
 	<script type="text/javascript" id="r7barrautil" src="http://barra.r7.com/barra.js">
-		{responsivo:true, banner: "<?php echo $banner;?>", submenu:"<?php echo $sub_menu;?>"}
+		{responsivo:true, accessibility:"<?php echo $accessibility; ?>", banner: "<?php echo $banner;?>", submenu:"<?php echo $sub_menu;?>"}
 	</script>
 	<?php
 }
 
 $r7_show_banner_using_referer = get_option( 'r7_referer' );
 
-if ( $r7_show_banner_using_referer && ! is_from_r7() ) {
+if ( $r7_show_banner_using_referer && !is_from_r7() ) {
 	return;
 }
 
-add_action( 'wp_print_scripts', 'header_r7' );
+
+add_action('wp_head', 'header_r7');
 add_action( 'wp_footer', 'footer_r7' );

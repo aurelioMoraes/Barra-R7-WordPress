@@ -24,6 +24,7 @@ function r7_barra_plugin_settings() {
     register_setting( 'r7-barra-settings-group', 'background_color' );
     register_setting( 'r7-barra-settings-group', 'sub_menu' );
     register_setting( 'r7-barra-settings-group', 'show_banner' );
+    register_setting( 'r7-barra-settings-group', 'show_accessibility' );
 }
 
 function r7_barra_plugin_settings_page() {
@@ -34,6 +35,7 @@ function r7_barra_plugin_settings_page() {
     $background_color = empty($background_color)? BACKGROUND_COLOR: $background_color;
     $show_sub_menu = get_option('sub_menu')?'checked=checked':'';
     $show_banner = get_option('show_banner')?'checked=checked':'';
+    $show_accessibility = get_option('show_accessibility')?'checked=checked':'';
 
     ?>
     <div class="wrap">
@@ -62,8 +64,14 @@ function r7_barra_plugin_settings_page() {
                     <th scope="row">Exibir banner</th>
                     <td><input type="checkbox" <?php echo $show_banner;?> name="show_banner"/></td>
                 </tr>
+                <tr valign="top">
+                    <th scope="row">Exibir item de menu acessibilidade</th>
+                    <td><input type="checkbox" <?php echo $show_accessibility;?> name="show_accessibility"/></td>
+                </tr>
             </table>
-            <?php submit_button(); ?>
+            <p>
+                <input type="submit" value="Salvar" class="button" />
+            </p>
         </form>
     </div>
 <?php } ?>
