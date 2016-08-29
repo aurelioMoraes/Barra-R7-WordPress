@@ -54,4 +54,4 @@ if ( $r7_show_banner_using_referer && !is_from_r7() ) {
 
 
 add_action('wp_head', 'header_r7');
-add_action( 'wp_footer', 'footer_r7' );
+
