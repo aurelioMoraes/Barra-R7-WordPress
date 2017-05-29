@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Barra R7
- * Description: Adiciona barra do portal R7 ao site edit
+ * Description: Adiciona barra do portal R7 ao site
  * Author: Bruno Borges <brbsilva@sp.r7.com>
  * Author URI: www
  * Version: 0.1
@@ -37,10 +37,16 @@ function footer_r7() {
 function header_r7() {
 	$sub_menu = get_option( 'sub_menu' );
 	$banner = get_option( 'show_banner' );
+	$url_admin_menu = "https://cms-media-api.r7.com/menu/58ee86211d42061afb000002";
 
 	?>
-	<script type="text/javascript" id="r7barrautil" src="http://barra.r7.com/barra.js">
-		{responsivo:true, banner: "<?php echo $banner;?>", submenu:"<?php echo $sub_menu;?>"}
+	<script
+		src="https://code.jquery.com/jquery-3.2.1.min.js"
+		integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		crossorigin="anonymous"></script>
+
+	<script type="text/javascript" id="r7barrautil" src="http://localhost/sites-core/wp-content/plugins/barra-generica/src/barra-v2.js">
+		{url_admin_menu: "<?php echo $url_admin_menu;?>", responsivo:true, banner: "<?php echo $banner;?>", submenu:"<?php echo $sub_menu;?>"}
 	</script>
 	<?php
 }

@@ -63,7 +63,8 @@ function r7_barra_plugin_settings_page() {
                     <td><input type="checkbox" <?php echo $show_banner;?> name="show_banner"/></td>
                 </tr>
             </table>
-            <?php submit_button(); ?>
+            <?php //submit_button(); ?>
+            <input type="submit" value="Salvar" class="button" />
         </form>
     </div>
 <?php } ?>
