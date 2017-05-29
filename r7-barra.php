@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Barra R7
- * Description: Adiciona barra do portal R7 ao site
+ * Description: Adiciona barra do portal R7 ao site edit
  * Author: Bruno Borges <brbsilva@sp.r7.com>
  * Author URI: www
  * Version: 0.1
