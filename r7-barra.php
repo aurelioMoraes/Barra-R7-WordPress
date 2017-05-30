@@ -37,6 +37,8 @@ function footer_r7() {
 function header_r7() {
 	$sub_menu = get_option( 'sub_menu' );
 	$banner = get_option( 'show_banner' );
+	$acessibilidade = get_option( 'show_acessibilidade' );
+	$r7_play = get_option( 'show_r7_play' );
 	$url_admin_menu = "https://cms-media-api.r7.com/menu/58ee86211d42061afb000002";
 
 	?>
@@ -46,7 +48,7 @@ function header_r7() {
 		crossorigin="anonymous"></script>
 
 	<script type="text/javascript" id="r7barrautil" src="http://localhost/sites-core/wp-content/plugins/barra-generica/src/barra-v2.js">
-		{url_admin_menu: "<?php echo $url_admin_menu;?>", responsivo:true, banner: "<?php echo $banner;?>", submenu:"<?php echo $sub_menu;?>"}
+		{r7_play: "<?php echo $r7_play;?>", acessibilidade: "<?php echo $acessibilidade;?>", url_admin_menu: "<?php echo $url_admin_menu;?>", responsivo:true, banner: "<?php echo $banner;?>", submenu:"<?php echo $sub_menu;?>"}
 	</script>
 	<?php
 }
